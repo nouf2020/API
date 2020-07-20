@@ -1,0 +1,41 @@
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>User Profile</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body class="loggedin">
+		<nav class="navtop">
+			<div>
+				<h1>Profile {{ account['userName'] }}</h1>
+                <a href="{{ url_for('home') }}"><i class="fas fa-home"></i>Home</a>
+				<a href="{{ url_for('user_profile') }}"><i class="fas fa-user-circle"></i>Profile</a>
+				<a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Logout</a>
+			</div>
+		</nav>
+		<div class="content">
+			<h2>Profile Details</h2>
+	<div>
+    <div class="register">
+    <form action="{{ url_for('changedata') }}" method="post" autocomplete="off">
+    	<input type="text" name="fName" placeholder="Firstname" id="firstname" style="width: 150px;" value="{{ user['first_name'] }}" required>
+		</td><td width="20px"> </td><td>
+		<input type="text" name="lName" placeholder="Lastname" id="lastname" style="width: 150px;" value="{{ user['last_name'] }}" required></td></tr></table>
+		<input type="text" name="prof" placeholder="Profession" id="profession" value="{{ user['profession'] }}" required>
+		<input type="text" name="gender" placeholder="Gender" id="gender" value="{{ user['gender'] }}" required>
+		<input type="text" name="states" placeholder="States" id="states" value="{{ user['states'] }}" required>
+		<input type="date" name="lastlogin" placeholder="Last Login" id="lastlogin" style="width: 310px; height: 50px;border: 1px solid #dee0e4;margin-bottom: 20px; padding: 0 15px;" value="{{ user['last_login'] }}" required>
+		<input type="text" name="userName" placeholder="Username" id="username" value="{{ account['userName'] }}" required>
+		<input type="password" name="userPass" placeholder="Password" id="password" value="{{ account['userPass'] }}" required>
+		<input type="email" name="userEmail" placeholder="Email" id="email" value="{{ account['userEmail'] }}" required>
+		<div class="msg">{{ msg }}</div>
+		<input type="submit" value="Edit Profile">
+	</form>
+	</div>
+	</div>
+	</div>
+	</body>
+</html>
+

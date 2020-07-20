@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Register</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body>
+		<div class="register">
+			<h1>Register</h1>
+			<div class="links">
+				<a href="{{ url_for('login') }}">Login</a>
+				<a href="{{ url_for('register') }}" class="active">Register</a>
+			</div>
+			<form action="{{ url_for('register') }}" method="post" autocomplete="off">
+				<input type="text" name="fName" placeholder="Firstname" id="firstname" style="width: 150px;" required>
+				</td><td width="20px"> </td><td>
+				<input type="text" name="lName" placeholder="Lastname" id="lastname" style="width: 150px;" required></td></tr></table>
+				<input type="text" name="prof" placeholder="Profession" id="profession" required>
+				<select name="gender" placeholder="User Gender" id="gender" style="width: 310px; height: 50px;border: 1px solid #dee0e4;margin-bottom: 20px; padding: 0 15px;" required>
+					<option selected="selected">Male</option>
+					<option>Female</option>
+				</select><br>
+				<input type="text" name="states" placeholder="States" id="states" required>
+				<input type="date" name="lastlogin" placeholder="Last Login" id="lastlogin" style="width: 310px; height: 50px;border: 1px solid #dee0e4;margin-bottom: 20px; padding: 0 15px;" required>
+				<input type="text" name="userName" placeholder="Username" id="username" required>
+				<input type="password" name="userPass" placeholder="Password" id="password" required>
+				<input type="email" name="userEmail" placeholder="Email" id="email" required>
+				<div class="msg">{{ msg }}</div>
+				<input type="submit" value="Register">
+			</form>
+		</div>
+	</body>
+</html>
